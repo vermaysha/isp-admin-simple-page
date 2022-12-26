@@ -1,0 +1,45 @@
+<hr>
+      <header class="card-header">
+        <p class="card-header-title">
+          <span class="icon"><i class="mdi mdi-wifi"></i></span>
+          Paket Client
+        </p>
+      </header>
+      <div class="card-content">
+        <form method="get">
+          <table style="width:40%">
+          <div class="field">
+            <tr>
+              <th></th>
+              <th>Paket</th>
+              <th>:</th>
+              <th><?php echo $paket ?></th>
+            </tr>
+          </div>
+          <div class="field">
+            <tr>
+              <th></th>
+              <th>Tagihan</th>
+              <th>:</th>
+              <th><?php echo $tagihan ?></th>
+            </tr>
+          </div>
+          <div class="field">
+            <tr>
+              <th></th>
+              <th>Tanggal Tagihan</th>
+              <th>:</th>
+              <th><?php echo $tanggal ?></th>
+            </tr>
+          </div>
+          <div class="field">
+            <tr>
+              <th></th>
+              <th>Status Bulan Ini</th>
+              <th>:</th>
+              <th><?php echo $status ?></th>
+            </tr>
+          </div>
+          </table>
+        </form>
+      </div>
