@@ -259,6 +259,7 @@ if (isset($_GET["cari"])) {
             
             <td class="actions-cell">
               <div class="buttons right nowrap">
+                <a class="button small green" href="edit_data_reseller.php?username=<?php echo $data['username']?>">Edit</a>
               <form action="reseller_info.php" method="post" >
                 <input type="hidden" name="username" value="<?php echo "$data[username]"; ?>" >
                 <button class="button small green --jb-modal" data-target="sample-modal" type="submit" name="info">
