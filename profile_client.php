@@ -15,6 +15,22 @@
 
 include("koneksidb.php");
 
+if ($_POST['update']) {
+
+  $nama_instansi        = htmlentities(strip_tags(trim($_POST["nama_instansi"] ?? '')));
+  $no_wa_reseller       = htmlentities(strip_tags(trim($_POST["no_wa_reseller"] ?? '')));
+  $alamat_instansi      = htmlentities(strip_tags(trim($_POST["alamat_instansi"] ?? '')));
+
+  $pesan_error="";
+
+  // filter semua data
+  $nama_instansi          = mysqli_real_escape_string($conn,$nama_instansi);
+  $no_wa_reseller         = mysqli_real_escape_string($conn,$no_wa_reseller);
+  $alamat_instansi        = mysqli_real_escape_string($conn,$alamat_instansi);
+
+  $query = "UPDATE `client` SET `nama_client` = '$nama_instansi', `alamat_client` = '$alamat_instansi', `no_wa_client` = '$no_wa_reseller'  WHERE `username` = '$_SESSION[username]'";
+  $result = mysqli_query($conn, $query);
+}
 
 ?>
 
@@ -162,7 +178,7 @@ include("koneksidb.php");
           </p>
         </header>
         <div class="card-content">
-          <form>
+          <form action="" method="POST">
             <div class="field">
               <label class="label">Nama Client</label>
               <div class="field-body">
@@ -210,7 +226,7 @@ include("koneksidb.php");
             <hr>
             <div class="field">
               <div class="control">
-                <button type="submit" name="update" class="button green">
+                <button type="submit" name="update" class="button green" value="update">
                   Submit
                 </button>
               </div>
@@ -255,7 +271,7 @@ include("koneksidb.php");
           <hr>
           <div class="field">
             <div class="control">
-              <button type="submit" class="button green">
+              <button type="submit" name="password" class="button green">
                 Submit
               </button>
             </div>
